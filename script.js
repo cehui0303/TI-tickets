@@ -1,5 +1,50 @@
 var grab = function() {
-    var date = new Date();
+    
+	
+	var href = window.location.href;
+	
+	//如果是提交订单页面
+	if(href.indexOf('buy.damai.cn/orderConfirm') > -1 ){
+		
+		//选择人员
+		var user2 = document.querySelectorAll('.ticket-buyer-select input')[1];
+		user2.click();
+		
+		var btn_submit = document.querySelectorAll('.submit-wrapper button')[0];
+
+		btn_submit.click();
+		
+		console.log('提交成功！');
+		
+		return;
+	}
+	
+	
+	console.log('开始抢票！');
+	
+	//chrome extension 不支持 $
+	//$('.sku_item:nth-child(4)').click();
+	
+	//选中档次
+	var sku = document.getElementsByClassName('sku_item')[3];
+	sku.click();
+	
+	//票的数量 
+	var amount = document.getElementsByClassName('cafe-c-input-number-handler-up')[0];
+	amount.click();
+	
+	//提交购买
+	var buybtn = document.getElementsByClassName('buybtn')[0];
+	buybtn.click();
+	
+	
+	
+	console.log('OK!');
+	
+	return;
+	
+	/*
+	var date = new Date();
     var pri = 'xxxxxxx';
 	document.querySelector('#privilege_val').placeholder = pri
     if (date.getHours() >= 12) {
@@ -25,5 +70,6 @@ var grab = function() {
     } else {
         setTimeout('grab()', 1000);
     }
+	*/
 }
 grab();
