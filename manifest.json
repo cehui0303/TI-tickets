@@ -9,7 +9,8 @@
   "content_scripts": [
     {
       "matches": ["https://detail.damai.cn/*","https://buy.damai.cn/*"],
-      "js": ["script.js"]
+      "js": ["script.js"],
+	  "run_at": "document_idle"
     }
   ]
 }
