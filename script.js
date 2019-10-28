@@ -15,6 +15,7 @@ function chooseSku(){
 			clearTimeout(timer);
 		}
 		
+		//按钮
 		var buybtn = document.getElementsByClassName('buybtn')[0];
 	
 		if( buybtn.className.indexOf("disabled")> -1 ){
@@ -55,10 +56,11 @@ function chooseUser(){
 
 		//提交
 		btn_submit && btn_submit.click();
+		alert('提交订单成功！');
 		return;
 		//debugger;
 		if(btn_submit){
-			//alert('提交订单成功！');
+			
 			console.log('提交订单成功！');
 		}
 	}else{
